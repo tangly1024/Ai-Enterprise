@@ -334,6 +334,29 @@
       background: #fbf7f3;
       border-color: rgba(217, 139, 31, .28);
     }
+    .scenario {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .scenario .card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .scenario dl {
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .scenario dt {
+      font-weight: 800;
+      color: var(--teal-dark);
+    }
+    .scenario dd {
+      margin: 0;
+      color: var(--muted);
+    }
     .fit-section {
       background: white;
       border-top: 1px solid var(--line);
@@ -376,7 +399,7 @@
           url("assets/hero-ai-automation.png");
         background-position: center bottom;
       }
-      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid { grid-template-columns: 1fr; }
+      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario { grid-template-columns: 1fr; }
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
@@ -455,6 +478,69 @@
         <article class="card">
           <h3>运营：后台和工单</h3>
           <p>把邮件、表格、工单、聊天记录整理成标准任务，能接系统接口就接接口，老系统再用 RPA。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>三个内测样板方向，老板可以直接对号入座。</h2>
+        <p>这些不是虚构客户案例，而是适合先验证购买意愿的高频场景。每个样板都能拆出明确交付物和验收指标。</p>
+      </div>
+      <div class="scenario">
+        <article class="card">
+          <span class="tag">贸易 / 批发</span>
+          <h3>报价跟进助手</h3>
+          <dl>
+            <div>
+              <dt>现在的问题</dt>
+              <dd>销售反复查价格、库存、历史报价，客户等回复，老板催进度。</dd>
+            </div>
+            <div>
+              <dt>样板交付</dt>
+              <dd>客户需求整理、报价草稿、跟进提醒、审批记录。</dd>
+            </div>
+            <div>
+              <dt>验收指标</dt>
+              <dd>报价准备时间、漏跟进次数、销售人工整理时间。</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="card">
+          <span class="tag">财税 / 代理记账</span>
+          <h3>票据初审助手</h3>
+          <dl>
+            <div>
+              <dt>现在的问题</dt>
+              <dd>票据、报销、附件来回核，资料缺失才发现，月底集中加班。</dd>
+            </div>
+            <div>
+              <dt>样板交付</dt>
+              <dd>票据字段抽取、异常标记、补资料清单、人工复核入口。</dd>
+            </div>
+            <div>
+              <dt>验收指标</dt>
+              <dd>单据预处理时间、资料退回次数、人工复核工作量。</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="card">
+          <span class="tag">本地服务 / 门店</span>
+          <h3>客服接待助手</h3>
+          <dl>
+            <div>
+              <dt>现在的问题</dt>
+              <dd>员工重复回答价格、预约、售后和门店规则，新人培训慢。</dd>
+            </div>
+            <div>
+              <dt>样板交付</dt>
+              <dd>知识库问答、回复草稿、客户意向标签、待办提醒。</dd>
+            </div>
+            <div>
+              <dt>验收指标</dt>
+              <dd>响应速度、重复咨询处理量、新员工上手时间。</dd>
+            </div>
+          </dl>
         </article>
       </div>
     </section>
@@ -605,6 +691,7 @@
       <div class="cta-box">
         <a id="email-link" href="#" data-email="bWFpbEB0YW5nbHkxMDI0LmNvbQ==">邮件申请：点击生成地址</a>
         <a href="#pricing">第 1 封邮件建议写：行业、流程、每天重复次数、现有资料</a>
+        <a href="mailto:?subject=企效AI内测申请模板&body=行业：%0D%0A公司规模：%0D%0A最想优化的流程：%0D%0A每天/每周重复次数：%0D%0A现在谁在做、花多久：%0D%0A已有资料：SOP/表格/报价单/历史记录%0D%0A希望先省：人工/错误/等待时间">打开申请邮件模板</a>
         <a href="../docs/product-plan.md">查看产品方案文档</a>
       </div>
     </section>
