@@ -357,6 +357,27 @@
       margin: 0;
       color: var(--muted);
     }
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .module-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .module-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--teal);
+    }
+    .module-card strong {
+      display: block;
+      margin-top: 12px;
+      color: var(--ink);
+    }
     .report-list {
       display: grid;
       gap: 12px;
@@ -431,7 +452,7 @@
           url("assets/hero-ai-automation.png");
         background-position: center bottom;
       }
-      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario, .faq { grid-template-columns: 1fr; }
+      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario, .modules, .faq { grid-template-columns: 1fr; }
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
@@ -447,6 +468,7 @@
     <div class="nav-links">
       <a href="#cost">算账</a>
       <a href="#scenes">场景</a>
+      <a href="#modules">能力</a>
       <a href="#delivery">交付</a>
       <a href="#pricing">价格</a>
       <a class="nav-cta" href="#contact">申请内测</a>
@@ -573,6 +595,51 @@
               <dd>响应速度、重复咨询处理量、新员工上手时间。</dd>
             </div>
           </dl>
+        </article>
+      </div>
+    </section>
+
+    <section id="modules">
+      <div class="section-head">
+        <h2>除了知识库和 AI 工作流，还可以叠加这些能直接落地的模块。</h2>
+        <p>中小企业不需要一次买全套。先选一个最疼的模块试点，跑通后再把能力叠到更多部门。</p>
+      </div>
+      <div class="modules">
+        <article class="card module-card">
+          <span class="tag">企业 AI 大脑</span>
+          <h3>资料问答和 SOP 助手</h3>
+          <p>把制度、产品资料、报价表、合同模板、历史 FAQ 接进知识库，回答带来源，新员工也能按标准话术处理问题。</p>
+          <strong>适合：客服、销售、行政、人事培训。</strong>
+        </article>
+        <article class="card module-card">
+          <span class="tag">流程自动化</span>
+          <h3>表单、邮件、工单自动处理</h3>
+          <p>把客户需求、邮件附件、表格内容整理成标准任务，自动生成草稿、提醒、待办和审批记录。</p>
+          <strong>适合：销售跟进、采购询价、售后工单。</strong>
+        </article>
+        <article class="card module-card">
+          <span class="tag">老系统补丁</span>
+          <h3>RPA 后台录入助手</h3>
+          <p>没有接口的老系统不用先重做。把重复点击、复制、录入做成受控脚本，高风险步骤仍由人确认。</p>
+          <strong>适合：ERP、进销存、财务软件、网页后台。</strong>
+        </article>
+        <article class="card module-card">
+          <span class="tag">经营看板</span>
+          <h3>老板日报和异常提醒</h3>
+          <p>每天汇总订单、线索、回款、库存、工单异常，让老板少翻群、少催人、少等月底才发现问题。</p>
+          <strong>适合：门店、贸易、服务团队、运营部门。</strong>
+        </article>
+        <article class="card module-card">
+          <span class="tag">客户增长</span>
+          <h3>线索分级和跟进建议</h3>
+          <p>把咨询记录、客户画像、历史成交整理成线索等级，提醒销售下一步该问什么、发什么资料。</p>
+          <strong>适合：ToB 销售、教培咨询、本地服务。</strong>
+        </article>
+        <article class="card module-card">
+          <span class="tag">风控审批</span>
+          <h3>高风险动作人工确认</h3>
+          <p>付款、合同、删除、客户关键字段变更不让 AI 直接执行。先生成依据和建议，再让负责人一键确认。</p>
+          <strong>适合：财务、合同、客户资料、权限变更。</strong>
         </article>
       </div>
     </section>
@@ -740,6 +807,31 @@
           <h3>会不会又变成外包项目烂尾？</h3>
           <p>不做大而全。每一阶段都有明确交付物、验收标准和退款边界。先交付体检报告，再决定是否做 14 天样板。</p>
         </article>
+      </div>
+    </section>
+
+    <section class="band" aria-label="内测申请流程">
+      <div class="section-head">
+        <h2>申请后不会马上推销，先做三步判断。</h2>
+        <p>我们把内测名额当成共创项目，不适合的流程直接劝退，适合的再进入体检或样板间。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>24 小时内回复</h3>
+          <p>确认行业、流程、资料是否够做免费初筛。</p>
+        </div>
+        <div class="step">
+          <h3>15 分钟初筛</h3>
+          <p>判断是不是高频、可复核、能产生节省。</p>
+        </div>
+        <div class="step">
+          <h3>给出下一步</h3>
+          <p>免费结束、进入 ¥680 体检，或暂缓先改流程。</p>
+        </div>
+        <div class="step">
+          <h3>不催付款</h3>
+          <p>付费前先写清交付物、验收标准和退款边界。</p>
+        </div>
       </div>
     </section>
 
