@@ -47,6 +47,7 @@ flowchart LR
 - [落地路线](docs/roadmap.md)
 - [安全与密钥](docs/security.md)
 - [Cloudflare Pages 部署建议](docs/cloudflare-pages.md)
+- [落地页复用 SOP](docs/landing-page-sop.md)
 
 ## 技术原则
 

@@ -31,6 +31,22 @@
 - 私域流量：给熟人客户一个合理缓冲，不显得强销售。
 - 不成熟需求：避免承诺过度，先筛选流程质量。
 
+## 渠道测试链接
+
+页面支持 `src` 参数，邮件主题和邮件模板会自动带上来源，适合手工判断哪个渠道更容易产生咨询。
+
+- 私域单聊：`https://ai-enterprise-test.pages.dev?src=wechat_private`
+- 微信群：`https://ai-enterprise-test.pages.dev?src=wechat_group`
+- 朋友圈：`https://ai-enterprise-test.pages.dev?src=moments`
+- 抖音/短视频：`https://ai-enterprise-test.pages.dev?src=douyin`
+- 熟人转介绍：`https://ai-enterprise-test.pages.dev?src=friend_referral`
+
+先看三个信号：
+
+- 是否有人愿意发来真实流程。
+- 是否有人愿意支付 `¥680` 做体检。
+- 哪个场景被反复提起：销售、财务、运营、客服、老板看板。
+
 ## 后续再加
 
 - Cloudflare Web Analytics：看访问量、来源、页面停留。

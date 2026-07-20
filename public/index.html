@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>企效 AI | 中小企业 AI 降本增效助手</title>
   <meta name="description" content="企效 AI 帮中小企业老板从一个重复流程开始，验证 AI 能省多少人工、少多少返工、快多少响应。内测邀请制，先诊断再试点。">
+  <meta name="theme-color" content="#0b766f">
+  <link rel="canonical" href="https://ai-enterprise-test.pages.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="企效 AI">
+  <meta property="og:title" content="企效 AI | 先帮你省下一个重复岗位的时间">
+  <meta property="og:description" content="中小企业 AI 降本增效助手。先免费初筛一个高频流程，再用 7 天体检和 14 天样板验证能省多少人工、少多少返工。">
+  <meta property="og:url" content="https://ai-enterprise-test.pages.dev/">
+  <meta property="og:image" content="https://ai-enterprise-test.pages.dev/assets/hero-ai-automation.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="企效 AI | 中小企业 AI 降本增效助手">
+  <meta name="twitter:description" content="不先买大系统。先选一个重复流程，验证能不能省人、省错、省等待。">
+  <meta name="twitter:image" content="https://ai-enterprise-test.pages.dev/assets/hero-ai-automation.png">
   <style>
     :root {
       color-scheme: light;
+      --page-max: 1120px;
       --ink: #17211f;
       --muted: #5d6865;
       --line: #dce4e1;
@@ -38,7 +52,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px clamp(24px, 7vw, 132px);
+      padding: 18px max(28px, calc((100vw - var(--page-max)) / 2 + 28px));
       background: rgba(247, 250, 248, .88);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(220, 228, 225, .7);
@@ -86,7 +100,7 @@
     }
     .hero {
       min-height: 92vh;
-      padding: 116px clamp(24px, 7vw, 132px) 56px;
+      padding: 116px max(28px, calc((100vw - var(--page-max)) / 2 + 28px)) 56px;
       display: grid;
       align-items: center;
       position: relative;
@@ -155,7 +169,7 @@
       font-size: 13px;
     }
     section {
-      padding: 72px clamp(24px, 7vw, 132px);
+      padding: 72px max(28px, calc((100vw - var(--page-max)) / 2 + 28px));
       scroll-margin-top: 92px;
     }
     .section-head {
@@ -181,6 +195,25 @@
     .grid.two {
       grid-template-columns: 1.05fr .95fr;
       align-items: stretch;
+    }
+    .visual-split {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 22px;
+      align-items: center;
+    }
+    .visual-frame {
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+    .visual-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
     }
     .card {
       background: var(--white);
@@ -437,7 +470,7 @@
       font-weight: 700;
     }
     footer {
-      padding: 28px clamp(24px, 7vw, 132px);
+      padding: 28px max(28px, calc((100vw - var(--page-max)) / 2 + 28px));
       color: var(--muted);
       font-size: 14px;
       background: white;
@@ -452,7 +485,7 @@
           url("assets/hero-ai-automation.png");
         background-position: center bottom;
       }
-      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario, .modules, .faq { grid-template-columns: 1fr; }
+      .grid, .grid.two, .visual-split, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario, .modules, .faq { grid-template-columns: 1fr; }
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
@@ -494,24 +527,29 @@
     </header>
 
     <section id="cost">
-      <div class="grid two">
-        <div class="section-head">
-          <h2>老板先算一笔账：重复劳动不是小事，是每月固定漏钱。</h2>
-          <p>一个员工每天花 2 小时查资料、填表、复制粘贴、催进度，一个月就是 40 多小时。按综合人工成本 ¥6,000-¥10,000/月算，先自动化一个高频流程，通常比再招一个人更容易验证。</p>
-          <div class="metric">
-            <div><strong>40h+</strong><span>每人每月常见重复耗时</span></div>
-            <div><strong>1 个</strong><span>先选最高频流程试点</span></div>
-            <div><strong>可退</strong><span>未交付约定结果按规则退款</span></div>
+      <div class="visual-split">
+        <div>
+          <div class="section-head">
+            <h2>老板先算一笔账：重复劳动不是小事，是每月固定漏钱。</h2>
+            <p>一个员工每天花 2 小时查资料、填表、复制粘贴、催进度，一个月就是 40 多小时。按综合人工成本 ¥6,000-¥10,000/月算，先自动化一个高频流程，通常比再招一个人更容易验证。</p>
+            <div class="metric">
+              <div><strong>40h+</strong><span>每人每月常见重复耗时</span></div>
+              <div><strong>1 个</strong><span>先选最高频流程试点</span></div>
+              <div><strong>可退</strong><span>未交付约定结果按规则退款</span></div>
+            </div>
           </div>
+          <article class="card">
+            <h3>我们优先找这三类钱</h3>
+            <ul class="checklist">
+              <li>人工成本：能不能少招、少加班、少靠熟手救火。</li>
+              <li>错误成本：能不能减少漏填、错填、忘跟进、重复沟通。</li>
+              <li>等待成本：客户回复、报价、审批、录入能不能从小时级变分钟级。</li>
+            </ul>
+          </article>
         </div>
-        <article class="card">
-          <h3>我们优先找这三类钱</h3>
-          <ul class="checklist">
-            <li>人工成本：能不能少招、少加班、少靠熟手救火。</li>
-            <li>错误成本：能不能减少漏填、错填、忘跟进、重复沟通。</li>
-            <li>等待成本：客户回复、报价、审批、录入能不能从小时级变分钟级。</li>
-          </ul>
-        </article>
+        <figure class="visual-frame" aria-label="企效 AI 价值、信任和交付视觉图">
+          <img src="assets/value-trust-delivery.png" alt="老板看到成本节省、审批信任和流程交付的可视化场景">
+        </figure>
       </div>
     </section>
 
