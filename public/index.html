@@ -482,8 +482,8 @@
         <h1>先帮你省下一个重复岗位的时间。</h1>
         <p class="lead">企效 AI 不让老板先买大系统。我们从客服回复、报价跟进、发票报销、后台录入里选 1 个高频流程，做出可验收结果，再谈扩展。</p>
         <div class="hero-actions">
-          <a class="btn" href="#contact">免费初筛流程</a>
-          <a class="btn secondary" href="#cost">先算能省多少</a>
+          <a class="btn" href="#contact" data-track="hero_apply">免费初筛流程</a>
+          <a class="btn secondary" href="#cost" data-track="hero_roi">先算能省多少</a>
         </div>
         <div class="proof" aria-label="服务指标">
           <div><strong>0 元</strong><span>先判断适不适合做</span></div>
@@ -694,7 +694,7 @@
             <strong>保障</strong>
             <p>不收款，不强推方案，不适合自动化就直接说。</p>
           </div>
-          <a class="btn secondary" href="#contact">免费初筛</a>
+          <a class="btn secondary" href="#contact" data-track="price_free_screening">免费初筛</a>
         </article>
         <article class="card price featured">
           <span class="tag">推荐验证</span>
@@ -718,7 +718,7 @@
             <strong>保障</strong>
             <p>7 天内未交付报告，全额退款；报告看不懂，免费改到能决策。</p>
           </div>
-          <a class="btn" href="#contact">申请体检</a>
+          <a class="btn" href="#contact" data-track="price_diagnostic">申请体检</a>
         </article>
         <article class="card price">
           <span class="tag">内测样板</span>
@@ -739,7 +739,7 @@
             <strong>保障</strong>
             <p>启动前写验收标准；未完成约定样板，退还未交付部分费用。</p>
           </div>
-          <a class="btn secondary" href="#contact">申请样板</a>
+          <a class="btn secondary" href="#contact" data-track="price_sample">申请样板</a>
         </article>
       </div>
       <div class="guarantees" aria-label="交付保障">
@@ -843,7 +843,7 @@
       <div class="cta-box">
         <a id="email-link" href="#" data-email="bWFpbEB0YW5nbHkxMDI0LmNvbQ==">邮件申请：点击生成地址</a>
         <a href="#pricing">第 1 封邮件建议写：行业、流程、每天重复次数、现有资料</a>
-        <a href="mailto:?subject=企效AI内测申请模板&body=行业：%0D%0A公司规模：%0D%0A最想优化的流程：%0D%0A每天/每周重复次数：%0D%0A现在谁在做、花多久：%0D%0A已有资料：SOP/表格/报价单/历史记录%0D%0A希望先省：人工/错误/等待时间">打开申请邮件模板</a>
+        <a id="template-link" href="mailto:?subject=企效AI内测申请模板&body=行业：%0D%0A公司规模：%0D%0A最想优化的流程：%0D%0A每天/每周重复次数：%0D%0A现在谁在做、花多久：%0D%0A已有资料：SOP/表格/报价单/历史记录%0D%0A希望先省：人工/错误/等待时间">打开申请邮件模板</a>
         <a href="../docs/product-plan.md">查看产品方案文档</a>
       </div>
     </section>
@@ -853,10 +853,31 @@
     企效 AI - 中小企业 AI 落地助手。当前为邀请制测试，页面价格为预算参考，暂不开放在线付款。
   </footer>
   <script>
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get("src") || params.get("utm_source") || params.get("ref") || "direct";
     const emailLink = document.getElementById("email-link");
+    const templateLink = document.getElementById("template-link");
     const email = atob(emailLink.dataset.email);
     emailLink.textContent = `邮件申请：${email}`;
-    emailLink.href = `mailto:${email}?subject=${encodeURIComponent("AI自动化内测申请")}`;
+    const subject = `企效AI内测申请 - ${source}`;
+    const body = [
+      `来源：${source}`,
+      "行业：",
+      "公司规模：",
+      "最想优化的流程：",
+      "每天/每周重复次数：",
+      "现在谁在做、花多久：",
+      "已有资料：SOP/表格/报价单/历史记录",
+      "希望先省：人工/错误/等待时间"
+    ].join("\r\n");
+    emailLink.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    templateLink.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    document.querySelectorAll("[data-track]").forEach((link) => {
+      link.addEventListener("click", () => {
+        window.localStorage.setItem("qixiao_last_cta", link.dataset.track);
+        window.localStorage.setItem("qixiao_last_source", source);
+      });
+    });
   </script>
 </body>
 </html>
