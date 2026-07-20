@@ -390,6 +390,21 @@
       margin: 0;
       color: var(--muted);
     }
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .choice-grid .card {
+      padding: 18px;
+    }
+    .choice-grid .highlight {
+      background: var(--mint);
+      border-color: rgba(11, 118, 111, .32);
+    }
+    .choice-grid .highlight h3 {
+      color: var(--teal-dark);
+    }
     .modules {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -485,7 +500,7 @@
           url("assets/hero-ai-automation.png");
         background-position: center bottom;
       }
-      .grid, .grid.two, .visual-split, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario, .modules, .faq { grid-template-columns: 1fr; }
+      .grid, .grid.two, .visual-split, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario, .choice-grid, .modules, .faq { grid-template-columns: 1fr; }
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
@@ -550,6 +565,40 @@
         <figure class="visual-frame" aria-label="企效 AI 价值、信任和交付视觉图">
           <img src="assets/value-trust-delivery.png" alt="老板看到成本节省、审批信任和流程交付的可视化场景">
         </figure>
+      </div>
+    </section>
+
+    <section id="choices" aria-label="替代方案对比">
+      <div class="section-head">
+        <h2>为什么不先招人、买系统或找外包？</h2>
+        <p>这些选择都可能有价值，但在需求还没验证前，投入太重。企效 AI 先用一个高频流程做小样板，省时、省错、提速能看见，再决定是否扩大。</p>
+      </div>
+      <div class="choice-grid">
+        <article class="card">
+          <span class="tag">再招一个人</span>
+          <h3>固定成本立刻增加</h3>
+          <p>每月工资、社保、管理沟通都变成长期成本，流程本身仍然依赖熟手。</p>
+        </article>
+        <article class="card">
+          <span class="tag">直接买 SaaS</span>
+          <h3>系统好，未必适配</h3>
+          <p>标准软件常常要员工改习惯，关键资料和老系统还需要人来搬运。</p>
+        </article>
+        <article class="card">
+          <span class="tag">找外包做系统</span>
+          <h3>周期长，需求会变</h3>
+          <p>还没证明能省钱，就容易进入需求、报价、开发、返工的长周期。</p>
+        </article>
+        <article class="card">
+          <span class="tag">自己研究 AI</span>
+          <h3>老板时间也很贵</h3>
+          <p>工具很多，但权限、数据、验收、出错边界都需要有人设计。</p>
+        </article>
+        <article class="card highlight">
+          <span class="tag">企效 AI</span>
+          <h3>先做一个流程样板</h3>
+          <p>7 天体检，14 天样板。先证明能不能省人力、少出错、快交付，再谈扩展。</p>
+        </article>
       </div>
     </section>
 
