@@ -116,6 +116,7 @@ npx wrangler pages deploy public --project-name ai-enterprise-test --branch mast
 每轮改完至少检查：
 
 ```powershell
+.\scripts\check-landing.ps1
 git diff --check
 npx --yes playwright screenshot --viewport-size="390,844" "file:///E:/Workspace/Ai-Enterprise/repository/public/index.html" output/playwright/mobile.png
 npx --yes playwright screenshot --viewport-size="1440,1000" "file:///E:/Workspace/Ai-Enterprise/repository/public/index.html" output/playwright/desktop.png

@@ -60,6 +60,7 @@ flowchart LR
 
 ```powershell
 copy .env.example .env
+.\scripts\check-landing.ps1
 ```
 
 真实密钥只放 `.env` 或父目录的 `secrets/`，不要提交。
