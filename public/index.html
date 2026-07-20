@@ -506,6 +506,9 @@
       color: white;
       font-weight: 700;
     }
+    .mobile-sticky {
+      display: none;
+    }
     footer {
       padding: 28px max(28px, calc((100vw - var(--page-max)) / 2 + 28px));
       color: var(--muted);
@@ -514,6 +517,7 @@
     }
 
     @media (max-width: 900px) {
+      body { padding-bottom: 84px; }
       .nav-links a:not(.nav-cta) { display: none; }
       .hero {
         min-height: 88vh;
@@ -526,6 +530,37 @@
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
+      .mobile-sticky {
+        position: fixed;
+        z-index: 20;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border: 1px solid rgba(11, 118, 111, .18);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 12px 36px rgba(18, 34, 31, .16);
+      }
+      .mobile-sticky span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .mobile-sticky strong {
+        display: block;
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.2;
+      }
+      .mobile-sticky .btn {
+        flex: 0 0 auto;
+        min-width: 64px;
+        color: white;
+      }
     }
   </style>
 </head>
@@ -1009,6 +1044,10 @@
   <footer>
     企效 AI - 中小企业 AI 落地助手。当前为邀请制测试，页面价格为预算参考，暂不开放在线付款。
   </footer>
+  <a class="mobile-sticky" href="#contact" data-track="mobile_sticky_apply" aria-label="申请免费初筛">
+    <span><strong>免费初筛流程</strong>15 分钟判断值不值得做</span>
+    <span class="btn">申请</span>
+  </a>
   <script>
     const params = new URLSearchParams(window.location.search);
     const source = params.get("src") || params.get("utm_source") || params.get("ref") || "direct";
