@@ -25,6 +25,9 @@ $requiredFragments = @(
   "class=""pricing""",
   "class=""faq""",
   "data-email=",
+  "data-track=""contact_email""",
+  "data-track=""contact_template""",
+  "data-track=""contact_product_plan""",
   "URLSearchParams"
 )
 
