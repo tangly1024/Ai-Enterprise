@@ -357,6 +357,27 @@
       margin: 0;
       color: var(--muted);
     }
+    .report-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .report-list li {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px 16px;
+    }
+    .report-list b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .report-list span {
+      color: var(--muted);
+    }
     .fit-section {
       background: white;
       border-top: 1px solid var(--line);
@@ -612,6 +633,9 @@
             <strong>交付结果</strong>
             <p>一份老板版《AI 降本体检报告》，后续试点可抵扣同额费用。</p>
           </div>
+          <ul class="report-list" aria-label="体检报告目录">
+            <li><b>报告包含</b><span>流程现状图、成本粗算、自动化路径、验收清单、报价边界。</span></li>
+          </ul>
           <div class="deliverable">
             <strong>保障</strong>
             <p>7 天内未交付报告，全额退款；报告看不懂，免费改到能决策。</p>
