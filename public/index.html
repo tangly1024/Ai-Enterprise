@@ -382,6 +382,17 @@
       background: white;
       border-top: 1px solid var(--line);
     }
+    .faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .faq .card {
+      background: #ffffff;
+    }
+    .faq h3 {
+      color: var(--teal-dark);
+    }
     .cta {
       display: grid;
       grid-template-columns: 1.2fr .8fr;
@@ -420,7 +431,7 @@
           url("assets/hero-ai-automation.png");
         background-position: center bottom;
       }
-      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario { grid-template-columns: 1fr; }
+      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid, .scenario, .faq { grid-template-columns: 1fr; }
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
@@ -703,6 +714,31 @@
             <li>没有资料、没有样例，也没人愿意配合复盘。</li>
             <li>只想买一个万能系统，一次解决所有部门问题。</li>
           </ul>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="常见顾虑">
+      <div class="section-head">
+        <h2>老板常问的几个问题，先讲清楚。</h2>
+        <p>内测阶段宁愿把边界说窄，也不把 AI 包装成万能药。能交付什么、不能碰什么，先写在前面。</p>
+      </div>
+      <div class="faq">
+        <article class="card">
+          <h3>会不会影响现有系统？</h3>
+          <p>不会一上来改核心系统。优先从资料整理、草稿生成、人工确认、旁路执行开始。需要接系统时，先接低风险接口；没有接口才考虑 RPA。</p>
+        </article>
+        <article class="card">
+          <h3>数据和客户资料安全吗？</h3>
+          <p>内测只收完成判断所需的最小资料。客户真实数据可先脱敏；合同、付款、删除、客户关键字段变更默认保留人工审批。</p>
+        </article>
+        <article class="card">
+          <h3>员工不配合怎么办？</h3>
+          <p>不要求员工学习复杂系统。样板间只围绕一个流程，把 AI 输出做成草稿、清单或提醒，让员工确认和修正即可。</p>
+        </article>
+        <article class="card">
+          <h3>会不会又变成外包项目烂尾？</h3>
+          <p>不做大而全。每一阶段都有明确交付物、验收标准和退款边界。先交付体检报告，再决定是否做 14 天样板。</p>
         </article>
       </div>
     </section>
