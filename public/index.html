@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>企效 AI | 中小企业 AI 落地助手</title>
-  <meta name="description" content="企效 AI 是面向中小企业老板的 AI 落地助手，先从一个高频重复流程开始，验证降本增效、交付结果和购买意愿。">
+  <title>企效 AI | 中小企业 AI 降本增效助手</title>
+  <meta name="description" content="企效 AI 帮中小企业老板从一个重复流程开始，验证 AI 能省多少人工、少多少返工、快多少响应。内测邀请制，先诊断再试点。">
   <style>
     :root {
       color-scheme: light;
@@ -178,6 +178,10 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
+    .grid.two {
+      grid-template-columns: 1.05fr .95fr;
+      align-items: stretch;
+    }
     .card {
       background: var(--white);
       border: 1px solid var(--line);
@@ -197,6 +201,43 @@
     .card ul {
       padding-left: 18px;
       margin: 12px 0 0;
+    }
+    .metric {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .metric div {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--white);
+    }
+    .metric strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.1;
+      color: var(--teal-dark);
+    }
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .checklist li {
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: rgba(223, 243, 238, .65);
+      color: #21322f;
     }
     .band {
       background: #102522;
@@ -337,7 +378,7 @@
           url("assets/hero-ai-automation.png");
         background-position: center bottom;
       }
-      .grid, .pricing, .steps, .cta, .guarantees { grid-template-columns: 1fr; }
+      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric { grid-template-columns: 1fr; }
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
@@ -351,6 +392,7 @@
       <span>企效 AI</span>
     </a>
     <div class="nav-links">
+      <a href="#cost">算账</a>
       <a href="#scenes">场景</a>
       <a href="#delivery">交付</a>
       <a href="#pricing">价格</a>
@@ -361,135 +403,157 @@
   <main>
     <header class="hero">
       <div class="hero-inner">
-        <span class="eyebrow">中小企业 AI 落地助手 · 内测邀请中</span>
-        <h1>帮老板把重复工作，变成可验收的 AI 流程。</h1>
-        <p class="lead">企效 AI 先不卖大系统。我们从客服回复、报价跟进、发票报销、后台录入里选 1 个高频流程，验证能不能省人、省错、省等待。</p>
+        <span class="eyebrow">中小企业 AI 降本增效助手 · 内测邀请中</span>
+        <h1>先帮你省下一个重复岗位的时间。</h1>
+        <p class="lead">企效 AI 不让老板先买大系统。我们从客服回复、报价跟进、发票报销、后台录入里选 1 个高频流程，做出可验收结果，再谈扩展。</p>
         <div class="hero-actions">
-          <a class="btn" href="#contact">申请内测名额</a>
-          <a class="btn secondary" href="#pricing">看交付和保障</a>
+          <a class="btn" href="#contact">免费初筛流程</a>
+          <a class="btn secondary" href="#cost">先算能省多少</a>
         </div>
         <div class="proof" aria-label="服务指标">
-          <div><strong>7 天</strong><span>完成流程诊断和方案</span></div>
-          <div><strong>30 天</strong><span>上线 1 个 MVP 闭环</span></div>
-          <div><strong>0 付款</strong><span>先初筛，不急着成交</span></div>
+          <div><strong>0 元</strong><span>先判断适不适合做</span></div>
+          <div><strong>7 天</strong><span>交付流程体检报告</span></div>
+          <div><strong>14 天</strong><span>做出单流程样板</span></div>
         </div>
       </div>
     </header>
 
+    <section id="cost">
+      <div class="grid two">
+        <div class="section-head">
+          <h2>老板先算一笔账：重复劳动不是小事，是每月固定漏钱。</h2>
+          <p>一个员工每天花 2 小时查资料、填表、复制粘贴、催进度，一个月就是 40 多小时。按综合人工成本 ¥6,000-¥10,000/月算，先自动化一个高频流程，通常比再招一个人更容易验证。</p>
+          <div class="metric">
+            <div><strong>40h+</strong><span>每人每月常见重复耗时</span></div>
+            <div><strong>1 个</strong><span>先选最高频流程试点</span></div>
+            <div><strong>可退</strong><span>未交付约定结果按规则退款</span></div>
+          </div>
+        </div>
+        <article class="card">
+          <h3>我们优先找这三类钱</h3>
+          <ul class="checklist">
+            <li>人工成本：能不能少招、少加班、少靠熟手救火。</li>
+            <li>错误成本：能不能减少漏填、错填、忘跟进、重复沟通。</li>
+            <li>等待成本：客户回复、报价、审批、录入能不能从小时级变分钟级。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <section id="scenes">
       <div class="section-head">
-        <h2>老板真正想买的，不是 AI，是少招人、少返工、少催进度。</h2>
-        <p>企效 AI 把“员工每天复制粘贴、查资料、填表、催单、录后台”的流程拆开，能自动的自动，必须确认的留给人。</p>
+        <h2>不是演示聊天机器人，是把一个真实流程跑起来。</h2>
+        <p>企效 AI 把员工每天重复的查资料、填表、生成草稿、录系统拆成可执行步骤。能自动的自动，涉及金额、合同、客户关键数据的动作保留人工确认。</p>
       </div>
       <div class="grid">
         <article class="card">
-          <h3>销售跟进慢</h3>
-          <p>客户问价格、政策、交期时，自动查资料并生成回复和报价草稿，销售只改重点。</p>
+          <h3>销售：报价和跟进</h3>
+          <p>客户发来需求后，自动查产品、价格、库存和历史报价，生成报价草稿和下一步跟进提醒。</p>
         </article>
         <article class="card">
-          <h3>财务返工多</h3>
-          <p>发票、报销、合同先自动抽取字段和规则初审，异常项再交给财务确认。</p>
+          <h3>财务：票据和报销</h3>
+          <p>发票、报销单、合同附件先自动抽字段、对规则、标异常，财务只处理需要判断的部分。</p>
         </article>
         <article class="card">
-          <h3>后台录入耗人</h3>
-          <p>把表格、邮件、工单里的信息整理成待执行任务，能接 API 就接 API，不能接再用 RPA。</p>
+          <h3>运营：后台和工单</h3>
+          <p>把邮件、表格、工单、聊天记录整理成标准任务，能接系统接口就接接口，老系统再用 RPA。</p>
         </article>
       </div>
     </section>
 
     <section class="band" id="delivery">
       <div class="section-head">
-        <h2>先验证一个能省钱的场景，不用一开始重做系统。</h2>
-        <p>产品还在共创内测期，核心是测试真实购买意愿和流程适配度，不适合自动化的需求不会硬推。</p>
+        <h2>交付方式很简单：先体检，再样板，最后才扩展。</h2>
+        <p>我们不承诺“全公司一键 AI 化”。先拿一个高频流程做样板间，让老板看到结果、风险和投入产出比。</p>
       </div>
       <div class="steps">
         <div class="step">
-          <h3>找痛点</h3>
-          <p>盘点每天重复、容易出错、老板经常催的人工流程。</p>
+          <h3>流程体检</h3>
+          <p>找出每天重复、容易出错、老板经常催的人工步骤。</p>
         </div>
         <div class="step">
-          <h3>接资料</h3>
-          <p>接入 SOP、FAQ、产品资料、报价表和历史记录，回答必须带来源。</p>
+          <h3>资料接入</h3>
+          <p>接入 SOP、FAQ、产品资料、报价表和历史记录，回答带来源。</p>
         </div>
         <div class="step">
-          <h3>做闭环</h3>
+          <h3>样板闭环</h3>
           <p>生成草稿、创建待办、调用系统或 RPA，高风险动作先审批。</p>
         </div>
         <div class="step">
-          <h3>算回报</h3>
-          <p>按省下的工时、减少的错误和响应速度决定是否继续。</p>
+          <h3>复盘 ROI</h3>
+          <p>按节省工时、减少返工和响应速度决定是否继续投。</p>
         </div>
       </div>
     </section>
 
     <section id="pricing">
       <div class="section-head">
-        <h2>价格是购买意愿测试，交付和退款边界先写清楚。</h2>
-        <p>企效 AI 还没有正式开放在线购买。以下价格用于判断预算和优先级，进入任何付费阶段前都会先确认验收标准。</p>
+        <h2>先低门槛验证，不让老板一上来背大预算。</h2>
+        <p>企效 AI 还没有正式开放在线购买。下面是内测价格，用来测试购买意愿；进入任何付费阶段前都会先写清交付物、验收标准和退款边界。</p>
       </div>
       <div class="pricing">
         <article class="card price">
-          <span class="tag">低门槛</span>
-          <h3>老板流程诊断包</h3>
-          <div class="amount">¥2,980 <small>/ 次</small></div>
-          <p>适合先判断“这个流程值不值得用 AI 做”。</p>
+          <span class="tag">先试水</span>
+          <h3>免费流程初筛</h3>
+          <div class="amount">¥0 <small>/ 15 分钟</small></div>
+          <p>适合先判断“这个流程是不是值得聊”。</p>
           <ul>
-            <li>1 次远程访谈</li>
-            <li>最多 3 个流程盘点</li>
-            <li>ROI 粗算和优先级排序</li>
-            <li>1 份老板看得懂的落地建议书</li>
+            <li>1 个流程快速判断</li>
+            <li>判断能否 AI/RPA 自动化</li>
+            <li>给出建议下一步</li>
+            <li>不适合会直接劝退</li>
           </ul>
           <div class="deliverable">
             <strong>交付结果</strong>
-            <p>一份流程诊断报告，明确能省哪里、怎么做、先不做什么。</p>
+            <p>一句清晰判断：适合做、暂缓做，还是先改流程。</p>
           </div>
           <div class="deliverable">
             <strong>保障</strong>
-            <p>未交付诊断报告，全额退款；不适合自动化，不推荐进入付费试点。</p>
+            <p>不收款，不强推方案，不适合自动化就直接说。</p>
           </div>
-          <a class="btn secondary" href="#contact">申请初筛</a>
+          <a class="btn secondary" href="#contact">免费初筛</a>
         </article>
         <article class="card price featured">
-          <span class="tag">推荐试点</span>
-          <h3>30 天试点闭环</h3>
-          <div class="amount">¥19,800 <small>/ 起</small></div>
-          <p>适合把一个高频场景做成能演示、能验收的版本。</p>
+          <span class="tag">推荐验证</span>
+          <h3>7 天降本体检</h3>
+          <div class="amount">¥680 <small>/ 可抵扣</small></div>
+          <p>适合认真评估一个流程的节省空间和落地路径。</p>
           <ul>
-            <li>1 个真实业务流程自动化</li>
-            <li>企业知识库或文档抽取</li>
-            <li>人工审批和审计日志</li>
-            <li>上线培训和验收复盘</li>
+            <li>远程访谈和材料梳理</li>
+            <li>人工步骤和系统依赖拆解</li>
+            <li>节省工时粗算</li>
+            <li>试点报价和验收清单</li>
           </ul>
           <div class="deliverable">
             <strong>交付结果</strong>
-            <p>一个可演示、可验收的流程闭环，含知识库、执行记录和操作说明。</p>
+            <p>一份老板版《AI 降本体检报告》，后续试点可抵扣同额费用。</p>
           </div>
           <div class="deliverable">
             <strong>保障</strong>
-            <p>启动前写清验收标准；未完成约定 MVP，退还未交付部分费用。</p>
+            <p>7 天内未交付报告，全额退款；报告看不懂，免费改到能决策。</p>
           </div>
-          <a class="btn" href="#contact">申请试点</a>
+          <a class="btn" href="#contact">申请体检</a>
         </article>
         <article class="card price">
-          <span class="tag">持续优化</span>
-          <h3>月度优化托管</h3>
-          <div class="amount">¥4,980 <small>/ 月起</small></div>
-          <p>适合已经跑通试点，希望继续减少人工和维护知识库的企业。</p>
+          <span class="tag">内测样板</span>
+          <h3>14 天流程样板间</h3>
+          <div class="amount">¥6,800 <small>/ 起</small></div>
+          <p>适合把 1 个流程做成能演示、能验收的小闭环。</p>
           <ul>
-            <li>知识库更新</li>
-            <li>流程监控和错误处理</li>
-            <li>每月新增 1 个小优化</li>
-            <li>远程支持和复盘</li>
+            <li>1 个真实业务流程</li>
+            <li>知识库/表单抽取/草稿生成</li>
+            <li>人工审批和执行记录</li>
+            <li>上线说明和复盘建议</li>
           </ul>
           <div class="deliverable">
             <strong>交付结果</strong>
-            <p>每月维护记录、问题处理清单和下一步优化建议。</p>
+            <p>一个可演示的流程样板，明确后续正式系统要不要做。</p>
           </div>
           <div class="deliverable">
             <strong>保障</strong>
-            <p>按月续费，无长期绑定；当月未提供维护记录可退当月服务费。</p>
+            <p>启动前写验收标准；未完成约定样板，退还未交付部分费用。</p>
           </div>
-          <a class="btn secondary" href="#contact">加入候补</a>
+          <a class="btn secondary" href="#contact">申请样板</a>
         </article>
       </div>
       <div class="guarantees" aria-label="交付保障">
@@ -539,8 +603,8 @@
 
     <section class="cta" id="contact">
       <div>
-        <h2>拿一个让你最头疼的重复流程来测。</h2>
-        <p>例如客服反复查资料、销售反复做报价、财务反复核票、运营反复录后台。先申请内测，不需要马上付款。</p>
+        <h2>发来一个你最想少雇人、少返工、少催进度的流程。</h2>
+        <p>例如客服反复查资料、销售反复做报价、财务反复核票、运营反复录后台。我们先免费初筛，不急着付款。</p>
       </div>
       <div class="cta-box">
         <a id="email-link" href="#" data-email="bWFpbEB0YW5nbHkxMDI0LmNvbQ==">邮件申请：点击生成地址</a>
