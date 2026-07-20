@@ -370,6 +370,12 @@
       background: #fbf7f3;
       border-color: rgba(217, 139, 31, .28);
     }
+    .fit-check {
+      margin-top: 16px;
+    }
+    .fit-check .btn {
+      margin-top: 16px;
+    }
     .scenario {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -865,7 +871,7 @@
       </div>
     </section>
 
-    <section class="fit-section" aria-label="适合自动化的流程判断">
+    <section class="fit-section" id="fit" aria-label="适合自动化的流程判断">
       <div class="section-head">
         <h2>不是所有流程都值得做 AI，我们先帮你挡掉不划算的。</h2>
         <p>这会让内测名额更稀缺，也让老板少走弯路。能省钱的流程才进入下一步。</p>
@@ -890,6 +896,16 @@
           </ul>
         </article>
       </div>
+      <article class="card fit-check">
+        <span class="tag">3 分钟自检</span>
+        <h3>如果下面 3 条成立，就值得先做免费初筛。</h3>
+        <ul>
+          <li>这个流程每周至少重复 20 次，或每天让员工花 1 小时以上。</li>
+          <li>结果有标准样例、SOP、表格、报价单或历史记录可以参考。</li>
+          <li>AI 给出草稿后，有员工能快速判断对不对、能不能发给客户或录入系统。</li>
+        </ul>
+        <a class="btn secondary" href="#contact" data-track="fit_self_check">带着这个流程来初筛</a>
+      </article>
     </section>
 
     <section aria-label="常见顾虑">
