@@ -38,7 +38,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px clamp(18px, 5vw, 72px);
+      padding: 18px clamp(24px, 7vw, 132px);
       background: rgba(247, 250, 248, .88);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(220, 228, 225, .7);
@@ -86,7 +86,7 @@
     }
     .hero {
       min-height: 92vh;
-      padding: 116px clamp(18px, 5vw, 72px) 56px;
+      padding: 116px clamp(24px, 7vw, 132px) 56px;
       display: grid;
       align-items: center;
       position: relative;
@@ -98,7 +98,7 @@
       background-position: center right;
     }
     .hero-inner {
-      max-width: 720px;
+      max-width: 680px;
       position: relative;
       z-index: 1;
     }
@@ -121,7 +121,7 @@
       letter-spacing: 0;
     }
     .lead {
-      max-width: 650px;
+      max-width: 620px;
       font-size: clamp(18px, 2.2vw, 24px);
       color: #34423f;
       margin: 0 0 28px;
@@ -136,7 +136,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
-      max-width: 610px;
+      max-width: 570px;
     }
     .proof div {
       background: rgba(255, 255, 255, .82);
@@ -155,7 +155,8 @@
       font-size: 13px;
     }
     section {
-      padding: 72px clamp(18px, 5vw, 72px);
+      padding: 72px clamp(24px, 7vw, 132px);
+      scroll-margin-top: 92px;
     }
     .section-head {
       max-width: 760px;
@@ -261,6 +262,25 @@
       font-weight: 500;
     }
     .price .btn { margin-top: auto; }
+    .deliverable {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+    .deliverable strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .guarantees {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .guarantees .card {
+      background: var(--mint);
+      border-color: rgba(11, 118, 111, .2);
+    }
     .compare {
       overflow-x: auto;
       background: white;
@@ -302,7 +322,7 @@
       font-weight: 700;
     }
     footer {
-      padding: 28px clamp(18px, 5vw, 72px);
+      padding: 28px clamp(24px, 7vw, 132px);
       color: var(--muted);
       font-size: 14px;
       background: white;
@@ -317,7 +337,7 @@
           url("assets/hero-ai-automation.png");
         background-position: center bottom;
       }
-      .grid, .pricing, .steps, .cta { grid-template-columns: 1fr; }
+      .grid, .pricing, .steps, .cta, .guarantees { grid-template-columns: 1fr; }
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
@@ -419,6 +439,14 @@
             <li>ROI 粗算和优先级排序</li>
             <li>1 份落地建议书</li>
           </ul>
+          <div class="deliverable">
+            <strong>交付结果</strong>
+            <p>一份流程诊断报告，明确“适合做 / 暂缓做 / 先改流程”。</p>
+          </div>
+          <div class="deliverable">
+            <strong>保障</strong>
+            <p>未交付诊断报告，全额退款；不适合自动化，不推荐进入付费试点。</p>
+          </div>
           <a class="btn secondary" href="#contact">申请初筛</a>
         </article>
         <article class="card price featured">
@@ -432,6 +460,14 @@
             <li>人工审批和审计日志</li>
             <li>上线培训和验收复盘</li>
           </ul>
+          <div class="deliverable">
+            <strong>交付结果</strong>
+            <p>一个可演示、可验收的流程闭环，包含操作说明和复盘建议。</p>
+          </div>
+          <div class="deliverable">
+            <strong>保障</strong>
+            <p>启动前写清验收标准；未完成约定 MVP，退还未交付部分费用。</p>
+          </div>
           <a class="btn" href="#contact">申请试点</a>
         </article>
         <article class="card price">
@@ -445,7 +481,29 @@
             <li>每月新增 1 个小优化</li>
             <li>远程支持和复盘</li>
           </ul>
+          <div class="deliverable">
+            <strong>交付结果</strong>
+            <p>每月维护记录、问题处理清单和下一步优化建议。</p>
+          </div>
+          <div class="deliverable">
+            <strong>保障</strong>
+            <p>按月续费，无长期绑定；当月未提供维护记录可退当月服务费。</p>
+          </div>
           <a class="btn secondary" href="#contact">加入候补</a>
+        </article>
+      </div>
+      <div class="guarantees" aria-label="交付保障">
+        <article class="card">
+          <h3>先定义验收</h3>
+          <p>合作前写清流程范围、输入输出、验收方式和不做事项，避免边做边加需求。</p>
+        </article>
+        <article class="card">
+          <h3>先看结果再扩展</h3>
+          <p>每次只验证 1 个高频流程，确认省时、省错或提速后再进入下一阶段。</p>
+        </article>
+        <article class="card">
+          <h3>退款边界清楚</h3>
+          <p>承诺的是约定交付物，不承诺万能自动化；没交付约定结果就按规则退款。</p>
         </article>
       </div>
     </section>
@@ -485,7 +543,7 @@
         <p>发来你的流程截图、表格、SOP 或一段人工操作说明。我们先判断是否适合自动化；不适合会直接说明，适合再邀请进入下一步。</p>
       </div>
       <div class="cta-box">
-        <a href="mailto:dev@x3game.org?subject=AI自动化内测申请">邮件申请：dev@x3game.org</a>
+        <a id="email-link" href="#" data-email="bWFpbEB0YW5nbHkxMDI0LmNvbQ==">邮件申请：点击生成地址</a>
         <a href="#pricing">查看预估价格</a>
         <a href="../docs/product-plan.md">查看产品方案文档</a>
       </div>
@@ -495,5 +553,11 @@
   <footer>
     重复工作替代器 - 中小企业 AI 自动化内测项目。当前为邀请制测试，页面价格为预算参考，暂不开放在线付款。
   </footer>
+  <script>
+    const emailLink = document.getElementById("email-link");
+    const email = atob(emailLink.dataset.email);
+    emailLink.textContent = `邮件申请：${email}`;
+    emailLink.href = `mailto:${email}?subject=${encodeURIComponent("AI自动化内测申请")}`;
+  </script>
 </body>
 </html>
