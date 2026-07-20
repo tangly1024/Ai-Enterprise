@@ -46,6 +46,7 @@ flowchart LR
 - [架构设计](docs/architecture.md)
 - [落地路线](docs/roadmap.md)
 - [安全与密钥](docs/security.md)
+- [Cloudflare Pages 部署建议](docs/cloudflare-pages.md)
 
 ## 技术原则
 
