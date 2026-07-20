@@ -114,6 +114,8 @@ npx wrangler pages deploy public --project-name ai-enterprise-test --branch mast
 - Build command 留空。
 - Output directory 使用 `public`。
 
+注意：Cloudflare Pages 只发布 `public/` 时，页面不要链接 `../docs/`。需要展示方案文档时，链接到 GitHub 上的公开文档，或把文档复制成 `public/` 下的正式页面。
+
 ## 10. 每轮优化检查
 
 每轮改完至少检查：

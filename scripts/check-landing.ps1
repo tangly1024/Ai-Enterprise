@@ -84,4 +84,8 @@ if ($html -notlike "*URLSearchParams*") {
   throw "Missing source tracking hook"
 }
 
+if ($html -like "*href=""../docs/*") {
+  throw "Public page contains a local docs link that will break after deploy"
+}
+
 Write-Host "Landing page checks passed."
