@@ -322,24 +322,22 @@
       background: var(--mint);
       border-color: rgba(11, 118, 111, .2);
     }
-    .compare {
-      overflow-x: auto;
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .fit-grid .card:first-child {
+      border-color: rgba(11, 118, 111, .26);
+    }
+    .fit-grid .card:last-child {
+      background: #fbf7f3;
+      border-color: rgba(217, 139, 31, .28);
+    }
+    .fit-section {
       background: white;
       border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
     }
-    table {
-      width: 100%;
-      min-width: 760px;
-      border-collapse: collapse;
-      font-size: 15px;
-    }
-    th, td {
-      text-align: left;
-      padding: 16px;
-      border-bottom: 1px solid var(--line);
-    }
-    th { color: var(--teal-dark); }
     .cta {
       display: grid;
       grid-template-columns: 1.2fr .8fr;
@@ -378,7 +376,7 @@
           url("assets/hero-ai-automation.png");
         background-position: center bottom;
       }
-      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric { grid-template-columns: 1fr; }
+      .grid, .grid.two, .pricing, .steps, .cta, .guarantees, .metric, .fit-grid { grid-template-columns: 1fr; }
       .price.featured { transform: none; }
       .proof { grid-template-columns: 1fr; }
       section { padding-block: 52px; }
@@ -572,33 +570,31 @@
       </div>
     </section>
 
-    <section class="compare" aria-label="适合自动化的流程判断表">
-      <table>
-        <thead>
-          <tr>
-            <th>适合先做</th>
-            <th>暂缓</th>
-            <th>原因</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>每天重复 20 次以上的查询、录入、归档</td>
-            <td>一年只发生几次的特殊流程</td>
-            <td>高频才容易回本</td>
-          </tr>
-          <tr>
-            <td>结果可以人工快速复核的草稿和初审</td>
-            <td>无人审批的付款、签约、删除</td>
-            <td>风险动作必须留人</td>
-          </tr>
-          <tr>
-            <td>有稳定 SOP、模板、表格、历史案例</td>
-            <td>规则还没统一的管理问题</td>
-            <td>AI 不能替代流程治理</td>
-          </tr>
-        </tbody>
-      </table>
+    <section class="fit-section" aria-label="适合自动化的流程判断">
+      <div class="section-head">
+        <h2>不是所有流程都值得做 AI，我们先帮你挡掉不划算的。</h2>
+        <p>这会让内测名额更稀缺，也让老板少走弯路。能省钱的流程才进入下一步。</p>
+      </div>
+      <div class="fit-grid">
+        <article class="card">
+          <h3>适合优先做</h3>
+          <ul>
+            <li>每天都有人重复查资料、填表、复制粘贴。</li>
+            <li>结果有模板、SOP、报价表、历史案例可参考。</li>
+            <li>员工能快速判断 AI 给出的草稿对不对。</li>
+            <li>老板能接受先做一个小样板，再决定是否扩展。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>暂时不建议做</h3>
+          <ul>
+            <li>流程本身还没定，今天一个规则、明天一个规则。</li>
+            <li>希望 AI 直接替老板做高风险决策。</li>
+            <li>没有资料、没有样例，也没人愿意配合复盘。</li>
+            <li>只想买一个万能系统，一次解决所有部门问题。</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section class="cta" id="contact">
@@ -608,7 +604,7 @@
       </div>
       <div class="cta-box">
         <a id="email-link" href="#" data-email="bWFpbEB0YW5nbHkxMDI0LmNvbQ==">邮件申请：点击生成地址</a>
-        <a href="#pricing">查看预估价格</a>
+        <a href="#pricing">第 1 封邮件建议写：行业、流程、每天重复次数、现有资料</a>
         <a href="../docs/product-plan.md">查看产品方案文档</a>
       </div>
     </section>
