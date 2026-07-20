@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>重复工作替代器 | 中小企业 AI 自动化落地</title>
+  <meta name="description" content="用企业知识库、工作流、RPA 和 AI Agent 帮中小企业减少人工重复操作，先验证一个高频流程，再扩展到全公司。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17211f;
+      --muted: #5d6865;
+      --line: #dce4e1;
+      --paper: #f7faf8;
+      --white: #ffffff;
+      --teal: #0b766f;
+      --teal-dark: #084f4b;
+      --amber: #d98b1f;
+      --mint: #dff3ee;
+      --rose: #f3e5dc;
+      font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px clamp(18px, 5vw, 72px);
+      background: rgba(247, 250, 248, .88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220, 228, 225, .7);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--teal);
+      color: white;
+      font-size: 17px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .nav-cta, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      background: var(--teal);
+      color: white;
+      font-weight: 700;
+      border: 1px solid var(--teal);
+    }
+    .btn.secondary {
+      background: rgba(255, 255, 255, .84);
+      color: var(--teal-dark);
+      border-color: rgba(11, 118, 111, .22);
+    }
+    .hero {
+      min-height: 92vh;
+      padding: 116px clamp(18px, 5vw, 72px) 56px;
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(247,250,248,.98) 0%, rgba(247,250,248,.91) 35%, rgba(247,250,248,.28) 68%, rgba(247,250,248,.06) 100%),
+        url("assets/hero-ai-automation.png");
+      background-size: cover;
+      background-position: center right;
+    }
+    .hero-inner {
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(223, 243, 238, .94);
+      color: var(--teal-dark);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 22px 0 18px;
+      max-width: 680px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 650px;
+      font-size: clamp(18px, 2.2vw, 24px);
+      color: #34423f;
+      margin: 0 0 28px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 610px;
+    }
+    .proof div {
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid rgba(220, 228, 225, .86);
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .proof strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+    .proof span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    section {
+      padding: 72px clamp(18px, 5vw, 72px);
+    }
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      min-height: 100%;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+    .card p, .card li {
+      color: var(--muted);
+      margin: 0;
+    }
+    .card ul {
+      padding-left: 18px;
+      margin: 12px 0 0;
+    }
+    .band {
+      background: #102522;
+      color: white;
+    }
+    .band .section-head p, .band .card p, .band .card li { color: #cbd9d5; }
+    .band .card {
+      background: rgba(255, 255, 255, .06);
+      border-color: rgba(255, 255, 255, .14);
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: step;
+    }
+    .step {
+      border-top: 3px solid var(--amber);
+      padding: 16px 0 0;
+      counter-increment: step;
+    }
+    .step::before {
+      content: "0" counter(step);
+      display: block;
+      color: var(--amber);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+    .price {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .price.featured {
+      border-color: var(--teal);
+      box-shadow: 0 18px 48px rgba(11, 118, 111, .16);
+      transform: translateY(-8px);
+    }
+    .tag {
+      width: fit-content;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: var(--rose);
+      color: #7b4015;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .amount {
+      font-size: 40px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    .amount small {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .price .btn { margin-top: auto; }
+    .compare {
+      overflow-x: auto;
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    th, td {
+      text-align: left;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    th { color: var(--teal-dark); }
+    .cta {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: center;
+      background: var(--teal-dark);
+      color: white;
+    }
+    .cta p { color: #d7e8e4; }
+    .cta-box {
+      background: rgba(255, 255, 255, .09);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .cta-box a {
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      color: white;
+      font-weight: 700;
+    }
+    footer {
+      padding: 28px clamp(18px, 5vw, 72px);
+      color: var(--muted);
+      font-size: 14px;
+      background: white;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero {
+        min-height: 88vh;
+        background-image:
+          linear-gradient(180deg, rgba(247,250,248,.98) 0%, rgba(247,250,248,.92) 48%, rgba(247,250,248,.36) 100%),
+          url("assets/hero-ai-automation.png");
+        background-position: center bottom;
+      }
+      .grid, .pricing, .steps, .cta { grid-template-columns: 1fr; }
+      .price.featured { transform: none; }
+      .proof { grid-template-columns: 1fr; }
+      section { padding-block: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="#">
+      <span class="mark">AI</span>
+      <span>重复工作替代器</span>
+    </a>
+    <div class="nav-links">
+      <a href="#scenes">场景</a>
+      <a href="#delivery">交付</a>
+      <a href="#pricing">价格</a>
+      <a class="nav-cta" href="#contact">预约诊断</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="hero-inner">
+        <span class="eyebrow">中小企业 AI 自动化落地服务</span>
+        <h1>把每天重复的人工操作，变成可审计的自动流程。</h1>
+        <p class="lead">我们先帮你找出最耗人的 1 个流程，用企业知识库、表单抽取、工作流、RPA 或 AI Agent 做成可验证的自动化闭环。</p>
+        <div class="hero-actions">
+          <a class="btn" href="#pricing">查看试点价格</a>
+          <a class="btn secondary" href="#delivery">看交付流程</a>
+        </div>
+        <div class="proof" aria-label="服务指标">
+          <div><strong>7 天</strong><span>完成流程诊断和方案</span></div>
+          <div><strong>30 天</strong><span>上线 1 个 MVP 闭环</span></div>
+          <div><strong>1 个流程</strong><span>先验证 ROI 再扩展</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section id="scenes">
+      <div class="section-head">
+        <h2>不是卖聊天机器人，是替代重复劳动。</h2>
+        <p>优先处理频次高、规则清楚、结果可复核的工作。确定性流程走工作流，老系统走 RPA，需要判断的步骤再交给 Agent。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>客服与销售</h3>
+          <p>自动查产品资料、政策和历史问答，生成客户回复、报价草稿、跟进记录。</p>
+        </article>
+        <article class="card">
+          <h3>财务与行政</h3>
+          <p>识别发票、报销单、合同和表格，自动生成初审结果，高风险动作保留审批。</p>
+        </article>
+        <article class="card">
+          <h3>运营与后台</h3>
+          <p>把日报、数据搬运、系统录入、资料归档从人工复制粘贴变成自动任务。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band" id="delivery">
+      <div class="section-head">
+        <h2>4 步验证，不用一开始重做系统。</h2>
+        <p>先验证一个流程能不能省钱，再决定是否继续扩大范围。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>流程盘点</h3>
+          <p>梳理人工步骤、输入输出、系统账号、异常情况和风险点。</p>
+        </div>
+        <div class="step">
+          <h3>知识接入</h3>
+          <p>导入 SOP、FAQ、产品资料、表格和制度，回答必须带来源。</p>
+        </div>
+        <div class="step">
+          <h3>自动执行</h3>
+          <p>能接 API 就接 API，不能接接口再用 RPA，动作都留日志。</p>
+        </div>
+        <div class="step">
+          <h3>复盘扩展</h3>
+          <p>按节省工时、错误率、响应速度决定下一个流程。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="section-head">
+        <h2>价格按验证阶段递进，先小钱买确定性。</h2>
+        <p>适合第一次接触 AI 自动化的传统企业。价格可作为市场测试口径，后续按行业和复杂度调整。</p>
+      </div>
+      <div class="pricing">
+        <article class="card price">
+          <span class="tag">低门槛</span>
+          <h3>流程诊断包</h3>
+          <div class="amount">¥2,980 <small>/ 次</small></div>
+          <p>适合先判断有没有自动化价值。</p>
+          <ul>
+            <li>1 次远程访谈</li>
+            <li>最多 3 个流程盘点</li>
+            <li>ROI 粗算和优先级排序</li>
+            <li>1 份落地建议书</li>
+          </ul>
+          <a class="btn secondary" href="#contact">先做诊断</a>
+        </article>
+        <article class="card price featured">
+          <span class="tag">推荐试点</span>
+          <h3>30 天 MVP</h3>
+          <div class="amount">¥19,800 <small>/ 起</small></div>
+          <p>适合把 1 个高频流程做成可用闭环。</p>
+          <ul>
+            <li>1 个业务流程自动化</li>
+            <li>企业知识库或文档抽取</li>
+            <li>人工审批和审计日志</li>
+            <li>上线培训和验收复盘</li>
+          </ul>
+          <a class="btn" href="#contact">预约 MVP</a>
+        </article>
+        <article class="card price">
+          <span class="tag">持续优化</span>
+          <h3>月度托管</h3>
+          <div class="amount">¥4,980 <small>/ 月起</small></div>
+          <p>适合已经上线，需要持续维护和扩展。</p>
+          <ul>
+            <li>知识库更新</li>
+            <li>流程监控和错误处理</li>
+            <li>每月新增 1 个小优化</li>
+            <li>远程支持和复盘</li>
+          </ul>
+          <a class="btn secondary" href="#contact">了解托管</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="compare" aria-label="适合自动化的流程判断表">
+      <table>
+        <thead>
+          <tr>
+            <th>适合先做</th>
+            <th>暂缓</th>
+            <th>原因</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>每天重复 20 次以上的查询、录入、归档</td>
+            <td>一年只发生几次的特殊流程</td>
+            <td>高频才容易回本</td>
+          </tr>
+          <tr>
+            <td>结果可以人工快速复核的草稿和初审</td>
+            <td>无人审批的付款、签约、删除</td>
+            <td>风险动作必须留人</td>
+          </tr>
+          <tr>
+            <td>有稳定 SOP、模板、表格、历史案例</td>
+            <td>规则还没统一的管理问题</td>
+            <td>AI 不能替代流程治理</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="cta" id="contact">
+      <div>
+        <h2>拿一个真实流程来测。</h2>
+        <p>发来你的流程截图、表格、SOP 或一段人工操作说明，我们先判断它适不适合自动化，适合再进入诊断或 MVP。</p>
+      </div>
+      <div class="cta-box">
+        <a href="mailto:dev@x3game.org?subject=AI自动化流程诊断">邮件预约：dev@x3game.org</a>
+        <a href="#pricing">先看价格阶梯</a>
+        <a href="../docs/product-plan.md">查看产品方案文档</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    重复工作替代器 - 中小企业 AI 自动化落地服务。报价为市场验证版本，最终以流程复杂度和数据安全要求为准。
+  </footer>
+</body>
+</html>
